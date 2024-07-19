@@ -1,0 +1,43 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .selected {
+    font-weight: bold;
+    color: #52aca3;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    cursor: pointer;
+    padding: 8px;
+  }
+  
+  li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+  }
+  
+  canvas {
+    width: 100% !important;
+    height: 400px !important;
+  }
+  
