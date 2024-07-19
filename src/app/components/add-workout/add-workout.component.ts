@@ -23,6 +23,9 @@ export class AddWorkoutComponent {
       this.name = '';
       this.workoutType = '';
       this.minutes = null;
+      alert("Your workout has been added.\nThe new entry will appear at the end of the list");
+    } else{
+      alert('Please fill out all fields');
     }
   }
 }
