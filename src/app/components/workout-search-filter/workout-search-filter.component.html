@@ -1,0 +1,11 @@
+<div class="p-4">
+    <input type="text" [(ngModel)]="searchTerm" (input)="onFilterChanged()" placeholder="Search by name" class="w-full p-2 border rounded">
+    <select [(ngModel)]="filterWorkoutType" (change)="onFilterChanged()" class="w-full p-2 border rounded mt-2">
+      <option value="">All Workout Types</option>
+      <option value="Running">Running</option>
+      <option value="Cycling">Cycling</option>
+      <option value="Swimming">Swimming</option>
+      <option value="Yoga">Yoga</option>
+    </select>
+  </div>
+  

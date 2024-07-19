@@ -1,13 +1,16 @@
+// src/app/app.component.ts
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { WorkoutListComponent } from './components/workout-list/workout-list.component';
+import { AddWorkoutComponent } from './components/add-workout/add-workout.component';
+import { WorkoutSearchFilterComponent } from './components/workout-search-filter/workout-search-filter.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  imports: [WorkoutListComponent, AddWorkoutComponent, WorkoutSearchFilterComponent]
 })
 export class AppComponent {
-  title = 'heatlTracker';
+  title = 'Health Tracker';
 }
