@@ -18,7 +18,7 @@
     </tbody>
   </table>
   <div class="mt-4">
-    <button (click)="prevPage()" [disabled]="currentPage === 1" class="bg-blue-500 text-white p-2 rounded">Previous</button> 
-    <button (click)="nextPage()" [disabled]="currentPage * itemsPerPage >= workouts.length" class="bg-blue-500 text-white p-2 rounded">Next</button>
+    <button (click)="prevPage()" [disabled]="currentPage === 1" class=" text-white p-2 rounded" style="background-color: #52aca3;">Previous</button> 
+    <button (click)="nextPage()" [disabled]="currentPage * itemsPerPage >= workouts.length" class=" text-white p-2 rounded" style="background-color: #52aca3;">Next</button>
   </div>
 </div>
