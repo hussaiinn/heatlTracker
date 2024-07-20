@@ -33,6 +33,22 @@ export class WorkoutService {
     return [];
   }
 
+  //if no data is their in local storage
+  private initializeData() {
+    const defaultWorkouts = [
+      { name: 'John Doe', workoutType: 'Running', minutes: 30 },
+      { name: 'Jane Smith', workoutType: 'Cycling', minutes: 45 },
+      { name: 'Mike Johnson', workoutType: 'Swimming', minutes: 60 }
+    ];
+
+    this.workouts = this.loadWorkouts();
+
+    if (this.workouts.length === 0) {
+      this.workouts = defaultWorkouts;
+      this.saveWorkouts();
+    }
+  }
+
   //Method to save workouts
   private saveWorkouts() {
     if (isPlatformBrowser(this.platformId)) {
