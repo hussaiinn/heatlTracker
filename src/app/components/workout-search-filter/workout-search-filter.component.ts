@@ -9,14 +9,17 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule],
 })
 export class WorkoutSearchFilterComponent {
+  //Define properties
   searchTerm: string = '';
   filterWorkoutType: string = '';
 
+  //EventEmitter
   @Output() filterChanged: EventEmitter<{
     searchTerm: string;
     filterWorkoutType: string;
   }> = new EventEmitter();
 
+  //Manage when filter changes
   onFilterChanged() {
     this.filterChanged.emit({
       searchTerm: this.searchTerm,

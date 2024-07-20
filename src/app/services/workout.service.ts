@@ -7,12 +7,14 @@ import { isPlatformBrowser } from '@angular/common';
 export class WorkoutService {
   private workouts: any[] = [];
 
+  //Injecting Platform id to check if code is running in browser or not 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
       this.workouts = this.loadWorkouts();
     }
   }
 
+  //Method to add workouts
   addWorkout(name: string, workoutType: string, minutes: number) {
     if (isPlatformBrowser(this.platformId)) {
       console.log('Adding workout:', { name, workoutType, minutes });
@@ -21,6 +23,7 @@ export class WorkoutService {
     }
   }
 
+  //Method to fetch workouts
   getWorkouts() {
     if (isPlatformBrowser(this.platformId)) {
       const workouts = this.loadWorkouts();
@@ -30,12 +33,14 @@ export class WorkoutService {
     return [];
   }
 
+  //Method to save workouts
   private saveWorkouts() {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('workouts', JSON.stringify(this.workouts));
     }
   }
 
+  //Method to load workouts
   private loadWorkouts() {
     if (isPlatformBrowser(this.platformId)) {
       const data = localStorage.getItem('workouts');

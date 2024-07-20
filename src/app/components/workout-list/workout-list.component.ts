@@ -27,21 +27,24 @@ export class WorkoutListComponent implements OnInit {
 
   constructor(private workoutService: WorkoutService) {}
 
+  //Initialize and fetch workouts
   ngOnInit() {
     this.workouts = this.workoutService.getWorkouts();
-    this.applyFilter({ searchTerm: '', filterWorkoutType: '' });
-    this.users = this.getUniqueUsers();
+    this.applyFilter({ searchTerm: '', filterWorkoutType: '' }); //apply filter 
+    this.users = this.getUniqueUsers(); 
     this.selectedUser = this.users[0];
     this.initializeChart();
     this.selectUser(this.selectedUser);
   }
 
+  //clean up when component is destroyed
   ngOnDestroy(): void {
     if (this.chart) {
       this.chart.destroy();
     }
   }
 
+  // apply name and workout filter to list 
   applyFilter(filter: { searchTerm: string; filterWorkoutType: string }) {
     this.filteredWorkouts = this.workouts
       .filter(
@@ -59,6 +62,7 @@ export class WorkoutListComponent implements OnInit {
       );
   }
 
+  //go to previous page
   prevPage() {
     if (this.currentPage > 1) {
       this.currentPage--;
@@ -66,12 +70,14 @@ export class WorkoutListComponent implements OnInit {
     }
   }
 
+  //go to next page
   nextPage() {
     if (this.currentPage * this.itemsPerPage < this.workouts.length) {
       this.currentPage++;
       this.applyFilter({ searchTerm: '', filterWorkoutType: '' });
     }
   }
+
 
   getUniqueUsers(): any[] {
     const userNames = [
@@ -83,11 +89,13 @@ export class WorkoutListComponent implements OnInit {
     }));
   }
 
+  //select user and update chart
   selectUser(user: any): void {
     this.selectedUser = user;
     this.updateChart();
   }
 
+  //Initialize chart using chart.js
   initializeChart(): void {
     Chart.register(...registerables); // Register Chart.js components
 
@@ -116,6 +124,8 @@ export class WorkoutListComponent implements OnInit {
     });
   }
 
+
+  //update chart.js with users data
   updateChart(): void {
     if (this.chart) {
       const labels = this.selectedUser.workouts.map(

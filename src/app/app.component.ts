@@ -6,11 +6,11 @@ import { WorkoutSearchFilterComponent } from './components/workout-search-filter
 
 @Component({
   selector: 'app-root',
-  standalone: true,
+  standalone: true,  //indicates that this is standalone
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   imports: [WorkoutListComponent, AddWorkoutComponent, WorkoutSearchFilterComponent]
 })
 export class AppComponent {
-  title = 'Health Tracker';
+  title = 'Health Tracker'; //title for web page
 }

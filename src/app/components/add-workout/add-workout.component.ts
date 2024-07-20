@@ -11,12 +11,14 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule]
 })
 export class AddWorkoutComponent {
+  //Define Properties
   name: string = '';
   workoutType: string = '';
   minutes: number | null = null;
 
   constructor(private workoutService: WorkoutService) {}
 
+  //to add new workout
   addWorkout() {
     if (this.name && this.workoutType && this.minutes) {
       this.workoutService.addWorkout(this.name, this.workoutType, this.minutes);
