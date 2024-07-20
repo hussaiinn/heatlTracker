@@ -12,7 +12,10 @@ export class WorkoutService {
     if (isPlatformBrowser(this.platformId)) {
       this.workouts = this.loadWorkouts();
     }
+    this.initializeData();
   }
+
+  
 
   //Method to add workouts
   addWorkout(name: string, workoutType: string, minutes: number) {
