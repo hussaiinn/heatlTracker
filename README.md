@@ -9,7 +9,7 @@ This project is an Angular application for tracking health challenges. Users can
 - Data persistence using `localStorage`
 - Unit tests for components and services
 - Display workout progress using charts
-- Hosted on [Netlify/GitHub Pages/etc.]
+- Hosted on Vercel
 
 ## Setup Instructions
 1. Clone the repository: <br>
@@ -33,7 +33,7 @@ The Code Coverage is for 1 component and 1 service  <br><br>
 
 
 ## Depoloyement
-The Application is deployed at []
+The Application is deployed at [https://health-tracker-ochre.vercel.app/]
 
 ## Build
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
